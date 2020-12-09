@@ -10,6 +10,7 @@ h1, h2, h3, p, a {
     font-family: 'Open Sans', sans-serif;
     --main-color: black;
     --accent-color: rgb(50, 206, 211);
+    scroll-behavior: smooth;
 }
 
 body {
@@ -43,6 +44,15 @@ body {
     font-style: italic;
 }
 
+.burger-icon {
+    font-size: 3rem;
+}
+
+#burger-checkbox {
+    display: none;
+}
+
+
 .menu a {
     display: block;
     text-decoration: none;
@@ -60,7 +70,25 @@ body {
     font-weight: bold;
 }
 
+
+header nav .menu {
+    display: none;
+}
+
+header nav input:checked ~ .menu {
+    display: block;
+}
+
+
 @media (min-width: 650px) {
+
+    .burger-icon {
+        display: none;
+    }
+
+    header nav input:checked ~ .menu {
+        display: flex;
+    }
 
     header nav {
         display: flex;
@@ -119,11 +147,18 @@ h1 {
     }
 }
 
+footer form label {
+    display: inline-block;
+    min-width: 120px;
+}
+
 footer .video {
     width: 100%;
     border: none;
     min-height: 600px;
 }
+
+
 
 /* Controls */
 
